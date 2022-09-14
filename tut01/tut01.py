@@ -18,3 +18,8 @@ def get_octant(x, y, z):
         return("quadrant=4")
     else:
         return("quadrant=-4")
+
+def octact_identification(mod=5000):
+    
+    # original values as empty lists
+    T, U, V, W=[], [], [], []
