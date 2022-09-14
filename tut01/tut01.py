@@ -16,3 +16,5 @@ def get_octant(x, y, z):
         return("quadrant=-3")
     elif(x>=0 and y<0 and z>=0):
         return("quadrant=4")
+    else:
+        return("quadrant=-4")
