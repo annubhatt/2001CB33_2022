@@ -133,3 +133,6 @@ def octact_identification(mod=5000):
 
     except:
         print('No File Found')
+#mod value can be changed manually from here to test the code
+mod=5000
+octact_identification(mod)
