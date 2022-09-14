@@ -40,3 +40,16 @@ def octact_identification(mod=5000):
             # skipping the heading row
             next(csvreader)
 
+            for line in csvreader:
+                Uavg= Uavg +float(line[1])
+                U.append(float(line[1]))
+
+                Vavg= Vavg +float(line[2])
+                V.append(float(line[2]))
+
+                Wavg= Wavg +float(line[3])
+                W.append(float(line[3]))
+
+                T.append(line[0])
+                n=n+1
+
