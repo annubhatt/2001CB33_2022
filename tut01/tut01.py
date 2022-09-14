@@ -23,3 +23,9 @@ def octact_identification(mod=5000):
     
     # original values as empty lists
     T, U, V, W=[], [], [], []
+
+    # values to be used in program
+    U_, V_, W_=[], [], []
+
+    # sum values
+    Uavg, Vavg, Wavg=0, 0, 0
