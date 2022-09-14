@@ -53,3 +53,20 @@ def octact_identification(mod=5000):
                 T.append(line[0])
                 n=n+1
 
+            # Finding average values
+            Uavg=Uavg/n
+            Vavg=Vavg/n
+            Wavg=Wavg/n
+
+            for i in range(0,n):
+                x=U[i]-Uavg
+                U_.append(x)
+
+                y=V[i]-Vavg
+                V_.append(y)
+                
+                z=W[i]-Wavg
+                W_.append(z)
+
+            nr=ceil(n/mod)
+
