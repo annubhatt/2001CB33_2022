@@ -116,3 +116,18 @@ def octact_identification(mod=5000):
                         c+=1
                     else:
                         break
+
+                    writer.writerow(t)
+                
+                # writing rows that are yet to be taken into consideration; (2+nr) rows have been written uptill here
+                for i in range(2+nr, n):
+                    t=[T[i], U[i], V[i], W[i], '','','',U_[j], V_[j], W_[j], get_octant(U_[j], V_[j], W_[j]),'']
+                    j+=1;
+                    writer.writerow(t)
+
+                # output file closed
+                fileoutput.close()
+            
+            # input file closed
+            fileinput.close()
+
