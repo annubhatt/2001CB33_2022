@@ -3,21 +3,21 @@ from math import ceil, floor
 
 def get_octant(x, y, z):
     if(x>=0 and y>=0 and z>=0):
-        return("quadrant=1")
+        return("octant=1")
     elif(x>=0 and y>=0 and z<0):
-        return("quadrant=-1")
+        return("octant=-1")
     elif(x<0 and y>=0 and z>=0):
-        return("quadrant=2")
+        return("octant=2")
     elif(x<0 and y>=0 and z<0):
-        return("quadrant=-2")
+        return("octant=-2")
     elif(x<0 and y<0 and z>=0):
-        return("quadrant=3")
+        return("octant=3")
     elif(x<0 and y<0 and z<0):
-        return("quadrant=-3")
+        return("octant=-3")
     elif(x>=0 and y<0 and z>=0):
-        return("quadrant=4")
+        return("octant=4")
     else:
-        return("quadrant=-4")
+        return("octant=-4")
 
 def octact_identification(mod=5000):
     
