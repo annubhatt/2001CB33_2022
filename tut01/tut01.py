@@ -29,3 +29,14 @@ def octact_identification(mod=5000):
 
     # sum values
     Uavg, Vavg, Wavg=0, 0, 0
+
+    # count of values
+    n=0  
+
+    try:
+        with open('octant_input.csv', 'r') as fileinput:
+            csvreader=csv.reader(fileinput)
+
+            # skipping the heading row
+            next(csvreader)
+
