@@ -131,3 +131,5 @@ def octact_identification(mod=5000):
             # input file closed
             fileinput.close()
 
+    except:
+        print('No File Found')
