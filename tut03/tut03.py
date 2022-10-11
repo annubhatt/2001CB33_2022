@@ -128,3 +128,12 @@ def octant_longest_subsequence_count():
         output_sh.cell(6,13, value=3); output_sh.cell(7,13, value=-3)
         output_sh.cell(8,13, value=4); output_sh.cell(9,13, value=-4)
 
+        output_sh.cell(2,14, value=LSC[1][0]);  output_sh.cell(2,15, value=LSC[1][1])
+        output_sh.cell(3,14, value=LSC[-1][0]); output_sh.cell(3,15, value=LSC[-1][1])
+        output_sh.cell(4,14, value=LSC[2][0]);  output_sh.cell(4,15, value=LSC[2][1])
+        output_sh.cell(5,14, value=LSC[-2][0]); output_sh.cell(5,15, value=LSC[-2][1])
+        output_sh.cell(6,14, value=LSC[3][0]);  output_sh.cell(6,15, value=LSC[3][1])
+        output_sh.cell(7,14, value=LSC[-3][0]); output_sh.cell(7,15, value=LSC[-3][1])
+        output_sh.cell(8,14, value=LSC[4][0]); output_sh.cell(8,15, value=LSC[4][1])
+        output_sh.cell(9,14, value=LSC[-4][0]); output_sh.cell(9,15, value=LSC[-4][1])
+
