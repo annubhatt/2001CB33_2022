@@ -137,3 +137,7 @@ def octant_longest_subsequence_count():
         output_sh.cell(8,14, value=LSC[4][0]); output_sh.cell(8,15, value=LSC[4][1])
         output_sh.cell(9,14, value=LSC[-4][0]); output_sh.cell(9,15, value=LSC[-4][1])
 
+        # saving file
+        wb_output.save('output_octant_longest_subsequence.xlsx')
+
+
