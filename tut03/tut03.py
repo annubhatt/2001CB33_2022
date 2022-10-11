@@ -140,4 +140,16 @@ def octant_longest_subsequence_count():
         # saving file
         wb_output.save('output_octant_longest_subsequence.xlsx')
 
+        wb_input.close()
+        wb_output.close()
+
+
+    except:
+        print('File Not Found')
+
+
+octant_longest_subsequence_count()
+
+endtime = datetime.now()
+print('Duration of Program Execution: {}'.format( - starttime))
 
