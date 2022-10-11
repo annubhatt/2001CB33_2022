@@ -120,3 +120,11 @@ def octant_longest_subsequence_count():
                 co=tov[i]
                 col=1
 
+        output_sh.cell(1,13, value='Count')
+        output_sh.cell(1,14, value='Longest Subsequence Length')
+        output_sh.cell(1,15, value='Count')
+        output_sh.cell(2,13, value=1); output_sh.cell(3,13, value=-1)
+        output_sh.cell(4,13, value=2); output_sh.cell(5,13, value=-2)
+        output_sh.cell(6,13, value=3); output_sh.cell(7,13, value=-3)
+        output_sh.cell(8,13, value=4); output_sh.cell(9,13, value=-4)
+
