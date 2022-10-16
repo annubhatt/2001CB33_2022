@@ -51,3 +51,8 @@ def octant_longest_subsequence_count_with_range():
         print("The file could not be found in the parent directory. Please make sure it exists.")
     except PermissionError:
         print("It seems you do not have the nescessary permissions to read/write in the parent directory. Please grant the nescessary permissions or change the working directory.")
+
+# This shall be the last lines of the code.
+start_time = datetime.now()
+
+octant_longest_subsequence_count_with_range
