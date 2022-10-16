@@ -56,3 +56,6 @@ def octant_longest_subsequence_count_with_range():
 start_time = datetime.now()
 
 octant_longest_subsequence_count_with_range
+
+end_time = datetime.now()
+print('Duration of Program Execution: {}'.format(end_time - start_time))
