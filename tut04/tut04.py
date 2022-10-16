@@ -44,3 +44,6 @@ def octant_longest_subsequence_count_with_range():
                 inputTable.at[i, 'Octant'] = int(4)
             if(inputTable["W'=W - W avg"][i] < 0):
                 inputTable.at[i, 'Octant'] = inputTable['Octant'][i] * -1
+
+    except ImportError:
+        print("The module 'Pandas' could not be imported, please make sure it is installed.")
