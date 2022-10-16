@@ -47,3 +47,7 @@ def octant_longest_subsequence_count_with_range():
 
     except ImportError:
         print("The module 'Pandas' could not be imported, please make sure it is installed.")
+    except FileNotFoundError:
+        print("The file could not be found in the parent directory. Please make sure it exists.")
+    except PermissionError:
+        print("It seems you do not have the nescessary permissions to read/write in the parent directory. Please grant the nescessary permissions or change the working directory.")
