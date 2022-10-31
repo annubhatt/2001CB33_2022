@@ -412,7 +412,7 @@ try:
         except:
              print("Enter mod value which is greater than 0")    
      except :
-      print("The input file does not exist/or any error")    
+      print("The input file does not exist or any error")    
     mod=5000 
     octant_range_names(mod)  
 except:
