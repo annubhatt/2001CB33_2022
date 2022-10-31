@@ -38,169 +38,169 @@ try:
           _d=math.ceil(29745/mod) # greatest integer function used 
           _l=0000
           _m=mod-1
-          a=str(_l)
-          b=str(_m)
+          A=str(_l)
+          B=str(_m)
           for j in range(_d) :
-             if int(b)>=29744:
-                df.loc[j+2,"octant id"]= a+"-"+"29744"
+             if int(B)>=29744:
+                df.loc[j+2,"octant id"]= A+"-"+"29744"
                 _l=_m+1
                 _m=_m+mod
-                a=str(_l)
-                b=str(_m)
+                A=str(_l)
+                B=str(_m)
              else:
-                df.loc[j+2,"octant id"]= a+"-"+b
+                df.loc[j+2,"octant id"]= A+"-"+B
                 _l=_m+1
                 _m=_m+mod
-                a=str(_l)
-                b=str(_m)
+                A=str(_l)
+                B=str(_m)
           
-          c=0 
-          t=0
-          p=2
-          for j in range(_d) : # no of coloumns in the output for each octant 
+          C=0 
+          T=0
+          P=2
+          for j in range(_d) : # number of coloumns in the output for each octant 
               for i in range(mod) : #running at each 5000 iterations (0-5000,5001-10000,......25000-30000)
-                  if df["Octant"][t]=="+4" : # counting number of +4 octant in range of 0-30000
-                     c =c+1
-                  t=t+1
-                  if t== 29745 : #we have break loop at t=29745 because after 
+                  if df["Octant"][T]=="+4" : # counting number of +4 octant in range of 0-30000
+                     C+=1
+                  T+=1
+                  if T== 29745 : #break loop at T=29745 
                     break
-              df.loc[p,"+4"]=c #assigning count of +4 in each coloumn by iterating p
-              p=p+1
-              c=0
+              df.loc[P,"+4"]=C #assignment of count of +4 in each coloumn by iterating P
+              P=P+1
+              C=0
               j=7
-          c=0
-          t=0
-          p=2
+          C=0
+          T=0
+          P=2
+          for j in range(_d) :# count of coloumns in the output for each octant
+              for i in range(mod) :
+                  if df["Octant"][T]=="-4" :# cFrequency of number of -4 octant in range of 0-30000
+                     C =C+1
+                  T=T+1
+                  if T== 29745 :
+                    break
+              df.loc[P,"-4"]=C #assigning count of -4 in each coloumn by iterating P
+              P=P+1
+              C=0
+              j=7
+          C=0
+          T=0
+          P=2
           for j in range(_d) :# no of coloumns in the output for each octant
               for i in range(mod) :
-                  if df["Octant"][t]=="-4" :# counting number of -4 octant in range of 0-30000
-                     c =c+1
-                  t=t+1
-                  if t== 29745 :
+                  if df["Octant"][T]=="+3" :# counting number of +3 octant in range of 0-30000
+                     C =C+1
+                  T=T+1
+                  if T== 29745 :
                     break
-              df.loc[p,"-4"]=c #assigning count of -4 in each coloumn by iterating p
-              p=p+1
-              c=0
+              df.loc[P,"+3"]=C #assigning count of +3 in each coloumn by iterating P
+              P=P+1
+              C=0
               j=7
-          c=0
-          t=0
-          p=2
+          C=0
+          T=0
+          P=2
           for j in range(_d) :# no of coloumns in the output for each octant
               for i in range(mod) :
-                  if df["Octant"][t]=="+3" :# counting number of +3 octant in range of 0-30000
-                     c =c+1
-                  t=t+1
-                  if t== 29745 :
+                  if df["Octant"][T]=="-3" :# counting number of -3 octant in range of 0-30000
+                     C =C+1
+                  T=T+1
+                  if T== 29745 :
                     break
-              df.loc[p,"+3"]=c #assigning count of +3 in each coloumn by iterating p
-              p=p+1
-              c=0
+              df.loc[P,"-3"]=C #assigning count of -3 in each coloumn by iterating P
+              P=P+1
+              C=0
               j=7
-          c=0
-          t=0
-          p=2
+          C=0
+          T=0
+          P=2
           for j in range(_d) :# no of coloumns in the output for each octant
               for i in range(mod) :
-                  if df["Octant"][t]=="-3" :# counting number of -3 octant in range of 0-30000
-                     c =c+1
-                  t=t+1
-                  if t== 29745 :
+                  if df["Octant"][T]=="+2" :# counting number of +2 octant in range of 0-30000
+                     C =C+1
+                  T=T+1
+                  if T== 29745 :
                     break
-              df.loc[p,"-3"]=c #assigning count of -3 in each coloumn by iterating p
-              p=p+1
-              c=0
-              j=7
-          c=0
-          t=0
-          p=2
-          for j in range(_d) :# no of coloumns in the output for each octant
-              for i in range(mod) :
-                  if df["Octant"][t]=="+2" :# counting number of +2 octant in range of 0-30000
-                     c =c+1
-                  t=t+1
-                  if t== 29745 :
-                    break
-              df.loc[p,"+2"]=c #assigning count of +2 in each coloumn by iterating p
-              p=p+1
-              c=0
+              df.loc[P,"+2"]=C #assigning count of +2 in each coloumn by iterating P
+              P=P+1
+              C=0
               j=7 
-          c=0
-          t=0
-          p=2
+          C=0
+          T=0
+          P=2
           for j in range(_d) :# no of coloumns in the output for each octant
               for i in range(mod) :
-                  if df["Octant"][t]=="-2" :# counting number of -2 octant in range of 0-30000
-                     c =c+1
-                  t=t+1
-                  if t== 29745 :
+                  if df["Octant"][T]=="-2" :# counting number of -2 octant in range of 0-30000
+                     C =C+1
+                  T=T+1
+                  if T== 29745 :
                     break
-              df.loc[p,"-2"]=c #assigning count of -2 in each coloumn by iterating p
-              p=p+1
-              c=0
+              df.loc[P,"-2"]=C #assigning count of -2 in each coloumn by iterating P
+              P=P+1
+              C=0
               j=7
-          c=0
-          t=0
-          p=2
+          C=0
+          T=0
+          P=2
           for j in range(_d) :# no of coloumns in the output for each octant
               for i in range(mod) :
-                  if df["Octant"][t]=="+1" :# counting number of +1 octant in range of 0-30000
-                     c =c+1
-                  t=t+1
-                  if t== 29745 :
+                  if df["Octant"][T]=="+1" :# counting number of +1 octant in range of 0-30000
+                     C =C+1
+                  T=T+1
+                  if T== 29745 :
                     break
-              df.loc[p,"+1"]=c#assigning count of +1 in each coloumn by iterating p
-              p=p+1
-              c=0
+              df.loc[P,"+1"]=C#assigning count of +1 in each coloumn by iterating P
+              P=P+1
+              C=0
               j=7    
-          c=0
-          t=0
-          p=2
+          C=0
+          T=0
+          P=2
           for j in range(_d) :# no of coloumns in the output for each octant
               for i in range(mod) :
-                  if df["Octant"][t]=="-1" :# counting number of -1 octant in range of 0-30000
-                     c =c+1
-                  t=t+1
-                  if t== 29745 :
+                  if df["Octant"][T]=="-1" :# counting number of -1 octant in range of 0-30000
+                     C =C+1
+                  T=T+1
+                  if T== 29745 :
                     break
-              df.loc[p,"-1"]=c #assigning count of -1 in each coloumn by iterating p
-              p=p+1
-              c=0
+              df.loc[P,"-1"]=C #assigning count of -1 in each coloumn by iterating P
+              P=P+1
+              C=0
               j=7
-          a=[]
-          b=[]
-          c=[]
+          A=[]
+          B=[]
+          C=[]
           for i in range(8) : 
-              c.append(0)
-          a.append(df["+1"][0])
-          a.append(df["-1"][0])
-          a.append(df["+2"][0])
-          a.append(df["-2"][0])
-          a.append(df["+3"][0])
-          a.append(df["-3"][0])
-          a.append(df["+4"][0])
-          a.append(df["-4"][0])
-          b.append(df["+1"][0])
-          b.append(df["-1"][0])
-          b.append(df["+2"][0])
-          b.append(df["-2"][0])
-          b.append(df["+3"][0])
-          b.append(df["-3"][0])
-          b.append(df["+4"][0])
-          b.append(df["-4"][0])
-          b.sort(reverse = True)
+              C.append(0)
+          A.append(df["+1"][0])
+          A.append(df["-1"][0])
+          A.append(df["+2"][0])
+          A.append(df["-2"][0])
+          A.append(df["+3"][0])
+          A.append(df["-3"][0])
+          A.append(df["+4"][0])
+          A.append(df["-4"][0])
+          B.append(df["+1"][0])
+          B.append(df["-1"][0])
+          B.append(df["+2"][0])
+          B.append(df["-2"][0])
+          B.append(df["+3"][0])
+          B.append(df["-3"][0])
+          B.append(df["+4"][0])
+          B.append(df["-4"][0])
+          B.sort(reverse = True)
           for i in range(8) : 
               for j in range(8) : 
-                  if a[j]==b[i] :
-                      c[j]=i+1
+                  if A[j]==B[i] :
+                      C[j]=i+1
                       j=9
-          df.loc[0,"rank of +1"]=c[0]                 
-          df.loc[0,"rank of -1"]=c[1]                 
-          df.loc[0,"rank of +2"]=c[2]
-          df.loc[0,"rank of -2"]=c[3]
-          df.loc[0,"rank of +3"]=c[4]
-          df.loc[0,"rank of -3"]=c[5]
-          df.loc[0,"rank of +4"]=c[6]
-          df.loc[0,"rank of -4"]=c[7]
+          df.loc[0,"rank of +1"]=C[0]                 
+          df.loc[0,"rank of -1"]=C[1]                 
+          df.loc[0,"rank of +2"]=C[2]
+          df.loc[0,"rank of -2"]=C[3]
+          df.loc[0,"rank of +3"]=C[4]
+          df.loc[0,"rank of -3"]=C[5]
+          df.loc[0,"rank of +4"]=C[6]
+          df.loc[0,"rank of -4"]=C[7]
           for v in range(_d) :
            e=[]
            f=[]
@@ -238,7 +238,7 @@ try:
            df.loc[v+2,"rank of +4"]=g[6]
            df.loc[v+2,"rank of -4"]=g[7]
            w=[]
-           c=0
+           C=0
            w.append(df["rank of +1"][0])
            w.append(df["rank of -1"][0])
            w.append(df["rank of +2"][0])
@@ -250,42 +250,42 @@ try:
           
            for j in range(8) :
                if w[j]==1 :
-                   c=j
-                   if(c==0) :
-                      c=1
-                      df.loc[0,"Rank1 Octant ID"]=c
+                   C=j
+                   if(C==0) :
+                      C=1
+                      df.loc[0,"Rank1 Octant ID"]=C
                       j=8
-                   if(c==1) :
-                      c=-1
-                      df.loc[0,"Rank1 Octant ID"]=c
+                   if(C==1) :
+                      C=-1
+                      df.loc[0,"Rank1 Octant ID"]=C
                       j=8
-                   if(c==2) :
-                      c=2
-                      df.loc[0,"Rank1 Octant ID"]=c
+                   if(C==2) :
+                      C=2
+                      df.loc[0,"Rank1 Octant ID"]=C
                       j=8
-                   if(c==3) :
-                      c=-2
-                      df.loc[0,"Rank1 Octant ID"]=c
+                   if(C==3) :
+                      C=-2
+                      df.loc[0,"Rank1 Octant ID"]=C
                       j=8
-                   if(c==4) :
-                       c=3
-                       df.loc[0,"Rank1 Octant ID"]=c
+                   if(C==4) :
+                       C=3
+                       df.loc[0,"Rank1 Octant ID"]=C
                        j=8
-                   if(c==5) :
-                       c=-3
-                       df.loc[0,"Rank1 Octant ID"]=c
+                   if(C==5) :
+                       C=-3
+                       df.loc[0,"Rank1 Octant ID"]=C
                        j=8
-                   if(c==6) :
-                       c=4
-                       df.loc[0,"Rank1 Octant ID"]=c
+                   if(C==6) :
+                       C=4
+                       df.loc[0,"Rank1 Octant ID"]=C
                        j=8
-                   if(c==7) :
-                      c=-4
-                      df.loc[0,"Rank1 Octant ID"]=c
+                   if(C==7) :
+                      C=-4
+                      df.loc[0,"Rank1 Octant ID"]=C
                       j=8
            for i in range(_d) :
               Y=[]
-              c=0
+              C=0
               Y.append(df["rank of +1"][i+2])
               Y.append(df["rank of -1"][i+2])
               Y.append(df["rank of +2"][i+2])
@@ -296,38 +296,38 @@ try:
               Y.append(df["rank of -4"][i+2])
               for j in range(8) :
                   if Y[j]==1 :
-                      c=j
-                      if(c==0) :
-                         c=1
-                         df.loc[i+2,"Rank1 Octant ID"]=c
+                      C=j
+                      if(C==0) :
+                         C=1
+                         df.loc[i+2,"Rank1 Octant ID"]=C
                          j=8
-                      if(c==1) :
-                         c=-1
-                         df.loc[i+2,"Rank1 Octant ID"]=c
+                      if(C==1) :
+                         C=-1
+                         df.loc[i+2,"Rank1 Octant ID"]=C
                          j=8
-                      if(c==2) :
-                         c=2
-                         df.loc[i+2,"Rank1 Octant ID"]=c
+                      if(C==2) :
+                         C=2
+                         df.loc[i+2,"Rank1 Octant ID"]=C
                          j=8
-                      if(c==3) :
-                         c=-2
-                         df.loc[i+2,"Rank1 Octant ID"]=c
+                      if(C==3) :
+                         C=-2
+                         df.loc[i+2,"Rank1 Octant ID"]=C
                          j=8
-                      if(c==4) :
-                          c=3
-                          df.loc[i+2,"Rank1 Octant ID"]=c
+                      if(C==4) :
+                          C=3
+                          df.loc[i+2,"Rank1 Octant ID"]=C
                           j=8
-                      if(c==5) :
-                          c=-3
-                          df.loc[i+2,"Rank1 Octant ID"]=c
+                      if(C==5) :
+                          C=-3
+                          df.loc[i+2,"Rank1 Octant ID"]=C
                           j=8
-                      if(c==6) :
-                          c=4
-                          df.loc[i+2,"Rank1 Octant ID"]=c
+                      if(C==6) :
+                          C=4
+                          df.loc[i+2,"Rank1 Octant ID"]=C
                           j=8
-                      if(c==7) :
-                         c=-4
-                         df.loc[i+2,"Rank1 Octant ID"]=c
+                      if(C==7) :
+                         C=-4
+                         df.loc[i+2,"Rank1 Octant ID"]=C
                          j=8
           
           df.loc[_d+5,"+1"]="OCTANT ID"
@@ -363,7 +363,7 @@ try:
           df.loc[0,"Rank1 Octant Name"]=octant_name_id_mapping[str(int(df.loc[0,"Rank1 Octant ID"]))]
           for i in range(_d) :
               df.loc[i+2,"Rank1 Octant Name"]=octant_name_id_mapping[str(int(df.loc[i+2,"Rank1 Octant ID"]))]
-          p=df['Rank1 Octant ID'].value_counts()
+          P=df['Rank1 Octant ID'].value_counts()
           h=[]
           for i in range(_d) :
               h.append(int(df["Rank1 Octant ID"][i+2]))
