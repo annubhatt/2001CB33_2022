@@ -92,35 +92,35 @@ try:
                   T=T+1
                   if T== 29745 :
                     break
-              df.loc[P,"+3"]=C #assigning count of +3 in each coloumn by iterating P
+              df.loc[P,"+3"]=C #assignment of count of +3 in each coloumn by iterating P
               P=P+1
               C=0
               j=7
           C=0
           T=0
           P=2
-          for j in range(_d) :# no of coloumns in the output for each octant
+          for j in range(_d) :# count of coloumns in the output for each octant
               for i in range(mod) :
-                  if df["Octant"][T]=="-3" :# counting number of -3 octant in range of 0-30000
+                  if df["Octant"][T]=="-3" :# frequency of number of -3 octant in range of 0-30000
                      C =C+1
                   T=T+1
                   if T== 29745 :
                     break
-              df.loc[P,"-3"]=C #assigning count of -3 in each coloumn by iterating P
+              df.loc[P,"-3"]=C #assignment of count of -3 in each coloumn by iterating P
               P=P+1
               C=0
               j=7
           C=0
           T=0
           P=2
-          for j in range(_d) :# no of coloumns in the output for each octant
+          for j in range(_d) :# count of coloumns in the output for each octant
               for i in range(mod) :
-                  if df["Octant"][T]=="+2" :# counting number of +2 octant in range of 0-30000
+                  if df["Octant"][T]=="+2" :# frequency of number of +2 octant in range of 0-30000
                      C =C+1
                   T=T+1
                   if T== 29745 :
                     break
-              df.loc[P,"+2"]=C #assigning count of +2 in each coloumn by iterating P
+              df.loc[P,"+2"]=C #assignment of count of +2 in each coloumn by iterating P
               P=P+1
               C=0
               j=7 
