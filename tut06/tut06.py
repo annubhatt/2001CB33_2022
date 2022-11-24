@@ -107,7 +107,7 @@ else:
             print("successfully sent the mail")
 
         except:
-            print('Failed to send the email!')
+            print('failed to send the email!')
    
     def attendance_report():
         from platform import python_version
