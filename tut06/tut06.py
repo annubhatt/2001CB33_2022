@@ -1,5 +1,5 @@
 from datetime import datetime
-start_time = datetime.now()
+StartTime = datetime.now()
 
 try:
     import os
@@ -7,14 +7,14 @@ try:
     from datetime import datetime, timedelta
 
 except:
-    print("install pandas,os & datatime and import it.")
+    print("Please install pandas,os & datatime and import it.")
 
 else:
-    classDates = []
+    Classdates = []
    
     def preprocess(df):
-        global classDates
-        classes = set()
+        global Classdates
+        Classes = set()
         for index in df.index:
             ts = df['Timestamp'][index]
             if '/' in ts:
@@ -27,12 +27,12 @@ else:
                 ts = date + '-' + month + '-' + year
             dt = getTimestampValue(ts)
             if dt.weekday() in [0,3]:
-                classes.add(dt.strftime("%d-%m-%Y"))
-        classDates = list(classes)
-        classDates.sort(key=lambda date: datetime.strptime(date, "%d-%m-%Y"))
+                Classes.add(dt.strftime("%d-%m-%Y"))
+        Classdates = list(Classes) # making a list 
+        Classdates.sort(key=lambda date: datetime.strptime(date, "%d-%m-%Y"))# using lambda function
         return df
    
-    def getNameAndRoll(student):
+    def getNameAndRoll(student): # passing student as argument to fetch related info
         roll = student[:8]
         name = student[9:]
         return name, roll
@@ -59,16 +59,16 @@ else:
             yield start_date + timedelta(n)
            
     def getAllClassDates():
-        classes = {}
-        for single_date in classDates:
-            classes[single_date] = 'A'
-        return classes
+        Classes = {}
+        for single_date in Classdates:
+            Classes[single_date] = 'A'
+        return Classes
    
     def getAllClassDuplicates():
-        classes = {}
-        for single_date in classDates:
-            classes[single_date] = 0
-        return classes
+        Classes = {}
+        for single_date in Classdates:
+            Classes[single_date] = 0
+        return Classes
    
     def send_email(user, pwd, recipient):
         import smtplib
