@@ -98,7 +98,7 @@ else:
         message.attach(attach_file)
        
         try:
-            session = smtplib.SMTP('smtp.gmail.com', 587) #use gmail with port
+            session = smtplib.SMTP('smtp.gmail.com', 587) #using gmail with port
             session.starttls() #enable security
             session.login(sender_address, sender_pass) #login with mail_id and password
             text = message.as_string()
