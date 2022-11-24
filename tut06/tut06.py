@@ -16,7 +16,7 @@ else:
         global Classdates
         Classes = set()
         for index in df.index:
-            ts = df['Timestamp'][index]
+            ts = df['timestamp'][index]
             if '/' in ts:
                 x = ts.split('/')
                 date = x[0], month = x[1], year = x[2]
