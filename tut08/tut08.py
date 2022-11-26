@@ -8,11 +8,11 @@ for row in Text.split("\n"):
 	Send.append(row)         #Adding to the last of the  list for each line of the commentary
 
 
-ball=re.findall(r'([0-9][.][1-6]|[1-2][0-9][.][1-6])',Text) #finding no of valid ball numbers
+ball=re.findall(r'([0-9][.][1-6]|[1-2][0-9][.][1-6])',Text) #finding no of valid ball numbers using findall that regular expression offers
 
 
 while("" in Send):
-    Send.remove("") #removing empty characters in 'Send' list
+    Send.remove("") #removing  the empty characters in 'Send' list
 
 
 for i in range(62):
