@@ -1,5 +1,5 @@
 from datetime import datetime
-StartTime = datetime.now()
+start_time = datetime.now()
 
 try:
     import os
@@ -7,16 +7,16 @@ try:
     from datetime import datetime, timedelta
 
 except:
-    print("Please install pandas,os & datatime and import it.")
+    print("install pandas,os & datatime and import it.")
 
 else:
-    Classdates = []
+    class_dates = []
    
-    def preprocess(df):
-        global Classdates
-        Classes = set()
+    def PreProcess(df):
+        global class_dates
+        classes = set()
         for index in df.index:
-            ts = df['timestamp'][index]
+            ts = df['Timestamp'][index]
             if '/' in ts:
                 x = ts.split('/')
                 date = x[0], month = x[1], year = x[2]
@@ -27,12 +27,12 @@ else:
                 ts = date + '-' + month + '-' + year
             dt = getTimestampValue(ts)
             if dt.weekday() in [0,3]:
-                Classes.add(dt.strftime("%d-%m-%Y"))
-        Classdates = list(Classes) # making a list 
-        Classdates.sort(key=lambda date: datetime.strptime(date, "%d-%m-%Y"))# using lambda function
+                classes.add(dt.strftime("%d-%m-%Y"))
+        class_dates = list(classes)
+        class_dates.sort(key=lambda date: datetime.strptime(date, "%d-%m-%Y"))
         return df
    
-    def getNameAndRoll(student): # passing student as argument to fetch related info
+    def getNameAndRoll(student):
         roll = student[:8]
         name = student[9:]
         return name, roll
@@ -59,16 +59,16 @@ else:
             yield start_date + timedelta(n)
            
     def getAllClassDates():
-        Classes = {}
-        for single_date in Classdates:
-            Classes[single_date] = 'A'
-        return Classes
+        classes = {}
+        for single_date in class_dates:
+            classes[single_date] = 'A'
+        return classes
    
     def getAllClassDuplicates():
-        Classes = {}
-        for single_date in Classdates:
-            Classes[single_date] = 0
-        return Classes
+        classes = {}
+        for single_date in class_dates:
+            classes[single_date] = 0
+        return classes
    
     def send_email(user, pwd, recipient):
         import smtplib
@@ -98,7 +98,7 @@ else:
         message.attach(attach_file)
        
         try:
-            session = smtplib.SMTP('smtp.gmail.com', 587) #using gmail with port
+            session = smtplib.SMTP('smtp.gmail.com', 587) #use gmail with port
             session.starttls() #enable security
             session.login(sender_address, sender_pass) #login with mail_id and password
             text = message.as_string()
@@ -107,7 +107,7 @@ else:
             print("successfully sent the mail")
 
         except:
-            print('failed to send the email!')
+            print('Failed to send the email!')
    
     def attendance_report():
         from platform import python_version
