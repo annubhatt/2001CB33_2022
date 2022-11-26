@@ -75,7 +75,7 @@ else:
         from email.mime.multipart import MIMEMultipart
         from email.mime.text import MIMEText
         from email.mime.application import MIMEApplication
-
+#making the content of mail
         mail_content = '''
         Dear students,
         Please find the attached attendance report for CS384 class.
