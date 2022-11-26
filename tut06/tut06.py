@@ -14,7 +14,7 @@ else:
    
     def PreProcess(df):
         global class_dates
-        classes = set()
+        classes = set() #creating a set of classes
         for index in df.index:
             ts = df['Timestamp'][index]
             if '/' in ts:
@@ -28,16 +28,16 @@ else:
             dt = getTimestampValue(ts)
             if dt.weekday() in [0,3]:
                 classes.add(dt.strftime("%d-%m-%Y"))
-        class_dates = list(classes)
-        class_dates.sort(key=lambda date: datetime.strptime(date, "%d-%m-%Y"))
+        class_dates = list(classes) #creating a list of classes
+        class_dates.sort(key=lambda date: datetime.strptime(date, "%d-%m-%Y")) #sorting the list of classes
         return df
    
-    def getNameAndRoll(student):
+    def getNameAndRoll(student): #initializing a function to get name and roll
         roll = student[:8]
         name = student[9:]
         return name, roll
    
-    # return 1 for valid and 0 for invalid
+    #  function that returns 1 for valid and 0 for invalid
     def getValidity(ts):
         time = ts.time()
         hour = time.hour
