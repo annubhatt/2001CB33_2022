@@ -29,7 +29,7 @@ l=len(Send)  # finding lenght of the list
 
 line=[]
 
-list1=[]
+list1=[] # creating empty list so that we can append items later
 
 for i in range(l):
 	list1=Send[i].split(',')
