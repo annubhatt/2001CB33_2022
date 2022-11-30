@@ -28,7 +28,7 @@ class Client:
 
         self.text_area= tkinter.scrolledtext.ScrolledText(self.win)
         self.text_area.pack(padx=20, pady=5)
-        self.text_arrea.config(state='disabled')
+        self.text_area.config(state='disabled')
 
         self.msg_label=tkinter.Label(self.win,text="Message:", bg="lightgray")
         self.msg_label.config(font=("Arial", 12))
