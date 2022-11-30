@@ -12,7 +12,7 @@ class Client:
         self.sock.connect((host,port))
         msg=tkinter.Tk()
         msg.withdraw()
-        self.nickname= simpledialog.askstream("Nickname","Please choose a nickname", parent=msg)
+        self.nickname= simpledialog.askstring("Nickname","Please choose a nickname", parent=msg)
         self.gui_done= False
         self.running=True
         gui_thread= threading.Thread(target=self.gui_loop)
