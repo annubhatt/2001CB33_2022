@@ -10,7 +10,7 @@ class Client:
     def __init__(self,host,port):
         self.sock=socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.sock.connect((host,port))
-        msg=tkinter.tk()
+        msg=tkinter.Tk()
         msg.withdraw()
         self.nickname= simpledialog.askstream("Nickname","Please choose a nickname", parent=msg)
         self.gui_done= False
